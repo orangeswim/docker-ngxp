@@ -1,8 +1,8 @@
-FROM openjdk:jdk
+FROM openjdk:13
 
 LABEL maintainer="mathieu.brunot at monogramm"
 
-ENV NODE_VERSION 8.11.3
+ENV NODE_VERSION 11.11.0
 ENV ANDROID_VERSION 4333796
 
 # Install the runtime libraries for the ia32/i386 architecture and G++ compiler
@@ -36,8 +36,8 @@ RUN ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | sdkmanager --licenses
 RUN sdkmanager \
 		"tools" \
 		"platform-tools" \
-		"platforms;android-25" \
-		"build-tools;27.0.3" \
+		"platforms;android-28" \
+		"build-tools;28.0.3" \
 		"extras;android;m2repository" \
 		"extras;google;m2repository" \
 	> /dev/null 2>&1
@@ -97,8 +97,8 @@ RUN set -ex; \
 	sdkmanager \
 		"tools" \
 		"platform-tools" \
-		"platforms;android-26" \
-		"build-tools;26.0.3" \
+		"platforms;android-28" \
+		"build-tools;28.0.3" \
 		"extras;android;m2repository" \
 		"extras;google;m2repository"
 
